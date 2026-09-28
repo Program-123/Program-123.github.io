@@ -1,0 +1,69 @@
+# -- 中文主导航菜单 --
+# 与 menus.en.toml 的社交图标部分保持一致（图标无文字，无需翻译）。
+
+[[main]]
+  name = "首页"
+  pageRef = "/"
+  weight = 10
+
+[[main]]
+  name = "关于"
+  pageRef = "about"
+  weight = 20
+
+[[main]]
+  name = "项目"
+  pageRef = "projects"
+  weight = 30
+
+[[main]]
+  name = "研究"
+  pageRef = "research"
+  weight = 40
+
+[[main]]
+  name = "论文"
+  pageRef = "publications"
+  weight = 50
+
+[[main]]
+  name = "博客"
+  pageRef = "posts"
+  weight = 60
+
+[[main]]
+  name = "简历"
+  pageRef = "cv"
+  weight = 70
+
+# ---- 右侧社交图标（与英文版一致）----
+
+[[main]]
+  identifier = "github"
+  pre = "github"
+  url = "https://github.com/Program-123"
+  weight = 80
+
+[[main]]
+  identifier = "email"
+  pre = "email"
+  url = "mailto:your-email@example.com"
+  weight = 81
+
+[[main]]
+  identifier = "google-scholar"
+  pre = "google-scholar"
+  url = "https://scholar.google.com/citations?user=USER_ID"
+  weight = 82
+
+[[main]]
+  identifier = "orcid"
+  pre = "orcid"
+  url = "https://orcid.org/0000-0000-0000-0000"
+  weight = 83
+
+[[main]]
+  identifier = "linkedin"
+  pre = "linkedin"
+  url = "https://www.linkedin.com/in/USERNAME"
+  weight = 84

@@ -1,0 +1,16 @@
+# 中文界面文案（自定义部分；主题通用文案由主题内置 zh-CN 语言包提供）
+shortcode:
+  recent_articles: "最新文章"
+
+# ---- 以下为自定义模板（publications / featured-projects）所用文案 ----
+pub:
+  pdf: "PDF"
+  doi: "DOI"
+  code: "代码"
+  project: "项目"
+  all: "← 返回全部论文"
+  none: "暂无论文。"
+  bibtex: "BibTeX"
+
+featured_projects:
+  demo: "在线演示 ↗"

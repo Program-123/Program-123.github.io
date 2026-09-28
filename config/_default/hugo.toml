@@ -5,6 +5,7 @@
 baseURL = "https://program-123.github.io/"
 theme = "blowfish"
 defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = false # 英文版在根路径 /，中文版在 /zh-cn/
 
 enableRobotsTXT = true
 

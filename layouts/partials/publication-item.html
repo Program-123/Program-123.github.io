@@ -15,16 +15,16 @@
   </p>
   <div class="pub-item__links">
     {{ with .Params.pdf }}
-      <a class="btn-pill" href="{{ . | relURL }}" target="_blank" rel="noopener noreferrer">PDF</a>
+      <a class="btn-pill" href="{{ . | relURL }}" target="_blank" rel="noopener noreferrer">{{ i18n "pub.pdf" }}</a>
     {{ end }}
     {{ with .Params.doi }}
-      <a class="btn-pill" href="https://doi.org/{{ . }}" target="_blank" rel="noopener noreferrer">DOI</a>
+      <a class="btn-pill" href="https://doi.org/{{ . }}" target="_blank" rel="noopener noreferrer">{{ i18n "pub.doi" }}</a>
     {{ end }}
     {{ with .Params.code }}
-      <a class="btn-pill" href="{{ . }}" target="_blank" rel="noopener noreferrer">Code</a>
+      <a class="btn-pill" href="{{ . }}" target="_blank" rel="noopener noreferrer">{{ i18n "pub.code" }}</a>
     {{ end }}
     {{ with .Params.project }}
-      <a class="btn-pill" href="{{ . }}" target="_blank" rel="noopener noreferrer">Project</a>
+      <a class="btn-pill" href="{{ . }}" target="_blank" rel="noopener noreferrer">{{ i18n "pub.project" }}</a>
     {{ end }}
   </div>
 </div>

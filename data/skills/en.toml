@@ -1,0 +1,21 @@
+# 技能清单（英文）—— About 页面按类别展示。
+# ⚠️ 占位内容：按类别增删修改。
+[[categories]]
+  name = "Programming Languages"
+  skills = ["Python", "C / C++", "Go", "JavaScript", "SQL"]
+
+[[categories]]
+  name = "Machine Learning"
+  skills = ["PyTorch", "TensorFlow", "scikit-learn", "Hugging Face Transformers"]
+
+[[categories]]
+  name = "Web Development"
+  skills = ["HTML / CSS", "TypeScript", "Hugo", "FastAPI", "Node.js"]
+
+[[categories]]
+  name = "Scientific Computing"
+  skills = ["NumPy", "SciPy", "pandas", "Matplotlib", "LaTeX"]
+
+[[categories]]
+  name = "Tools"
+  skills = ["Git", "Docker", "Linux", "GitHub Actions", "VS Code"]

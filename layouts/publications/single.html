@@ -17,16 +17,16 @@
     </div>
     <div class="pub-item__links mt-2 mb-6">
       {{ with .Params.pdf }}
-        <a class="btn-pill" href="{{ . | relURL }}" target="_blank" rel="noopener noreferrer">PDF</a>
+        <a class="btn-pill" href="{{ . | relURL }}" target="_blank" rel="noopener noreferrer">{{ i18n "pub.pdf" }}</a>
       {{ end }}
       {{ with .Params.doi }}
-        <a class="btn-pill" href="https://doi.org/{{ . }}" target="_blank" rel="noopener noreferrer">DOI</a>
+        <a class="btn-pill" href="https://doi.org/{{ . }}" target="_blank" rel="noopener noreferrer">{{ i18n "pub.doi" }}</a>
       {{ end }}
       {{ with .Params.code }}
-        <a class="btn-pill" href="{{ . }}" target="_blank" rel="noopener noreferrer">Code</a>
+        <a class="btn-pill" href="{{ . }}" target="_blank" rel="noopener noreferrer">{{ i18n "pub.code" }}</a>
       {{ end }}
       {{ with .Params.project }}
-        <a class="btn-pill" href="{{ . }}" target="_blank" rel="noopener noreferrer">Project</a>
+        <a class="btn-pill" href="{{ . }}" target="_blank" rel="noopener noreferrer">{{ i18n "pub.project" }}</a>
       {{ end }}
     </div>
   </header>
@@ -39,12 +39,12 @@
 
   {{ with .Params.bibtex }}
     <section class="prose dark:prose-invert mt-8">
-      <h2>BibTeX</h2>
+      <h2>{{ i18n "pub.bibtex" }}</h2>
       {{ highlight . "bibtex" "" }}
     </section>
   {{ end }}
 
   <div class="mt-10 print:hidden">
-    <a class="btn-pill" href="/publications/">← All Publications</a>
+    <a class="btn-pill" href="/publications/">{{ i18n "pub.all" }}</a>
   </div>
 {{ end }}

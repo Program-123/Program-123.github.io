@@ -1,13 +1,14 @@
 {{/*
-  技能分组：读取 data/skills.toml，按类别展示
+  技能分组：按当前语言读取 data/skills/{en,zh-cn}.toml，按类别展示
   用法: {{< skills >}}
 */}}
+{{ $data := index hugo.Data.skills (string site.Language.Lang) }}
 <div class="not-prose">
-  {{ range $cat := hugo.Data.skills.categories }}
+  {{ range $data.categories }}
     <div class="skills-group">
-      <h3>{{ $cat.name }}</h3>
+      <h3>{{ .name }}</h3>
       <ul>
-        {{ range $cat.skills }}
+        {{ range .skills }}
           <li>{{ . }}</li>
         {{ end }}
       </ul>

@@ -1,4 +1,17 @@
 # 覆盖主题文案（Hugo i18n 覆盖机制，不修改主题源码）
-# 首页底部"最新文章"区块标题改为 Recent Posts
+# 首页底部"最新文章"区块标题
 shortcode:
   recent_articles: "Recent Posts"
+
+# ---- 以下为自定义模板（publications / featured-projects）所用文案 ----
+pub:
+  pdf: "PDF"
+  doi: "DOI"
+  code: "Code"
+  project: "Project"
+  all: "← All Publications"
+  none: "No publications yet."
+  bibtex: "BibTeX"
+
+featured_projects:
+  demo: "Demo ↗"

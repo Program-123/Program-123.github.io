@@ -1,9 +1,10 @@
 {{/*
-  研究方向标签：读取 data/interests.toml
+  研究方向标签：按当前语言读取 data/interests/{en,zh-cn}.toml
   用法: {{< interests >}}
 */}}
+{{ $data := index hugo.Data.interests (string site.Language.Lang) }}
 <div class="interest-chips">
-  {{ range $item := hugo.Data.interests.items }}
-    <span>{{ $item.name }}</span>
+  {{ range $data.items }}
+    <span>{{ .name }}</span>
   {{ end }}
 </div>
