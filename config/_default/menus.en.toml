@@ -52,24 +52,6 @@
   url = "mailto:your-email@example.com"
   weight = 81
 
-[[main]]
-  identifier = "google-scholar"
-  pre = "google-scholar"
-  url = "https://scholar.google.com/citations?user=USER_ID"
-  weight = 82
-
-[[main]]
-  identifier = "orcid"
-  pre = "orcid"
-  url = "https://orcid.org/0000-0000-0000-0000"
-  weight = 83
-
-[[main]]
-  identifier = "linkedin"
-  pre = "linkedin"
-  url = "https://www.linkedin.com/in/USERNAME"
-  weight = 84
-
 # -- Footer Menu (可选) --
 
 # [[footer]]

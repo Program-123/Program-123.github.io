@@ -24,10 +24,8 @@ title = "你的姓名" # ⚠️ 占位符：中文站站点标题
   imageQuality = 96
   headline = "研究者 / 开发者 / 学生"
   bio = "我对人工智能、机器学习、计算科学与软件工程感兴趣。"
+  # 社交链接（如需更多可加回 google-scholar / orcid / linkedin）
   links = [
     { github = "https://github.com/Program-123" },
-    { google-scholar = "https://scholar.google.com/citations?user=USER_ID" },
     { email = "mailto:your-email@example.com" },
-    { orcid = "https://orcid.org/0000-0000-0000-0000" },
-    { linkedin = "https://www.linkedin.com/in/USERNAME" },
   ]

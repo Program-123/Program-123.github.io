@@ -63,7 +63,7 @@ hugo --minify
 | 姓名 / 站点标题 | `config/_default/languages.en.toml` → `title` 与 `[params.author] name` |
 | 头像 | 替换 `assets/img/avatar.png` |
 | Hero 简介（headline / bio） | `config/_default/languages.en.toml` → `[params.author]` |
-| 社交链接（GitHub / Email / Scholar / ORCID / LinkedIn） | 同上文件的 `links` 列表 |
+| 社交链接（当前为 GitHub / Email） | 同上文件的 `links` 列表 |
 | 导航栏右侧图标链接 | `config/_default/menus.en.toml` 底部"右侧社交图标"部分 |
 | 研究方向标签 | `data/interests/en.toml` 与 `data/interests/zh-cn.toml` |
 | 技能清单 | `data/skills/en.toml` 与 `data/skills/zh-cn.toml` |
