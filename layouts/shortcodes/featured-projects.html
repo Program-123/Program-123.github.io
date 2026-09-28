@@ -1,0 +1,52 @@
+{{/*
+  首页精选项目卡片：自动读取 content/projects/ 中 front matter 带 featured = true 的项目
+  用法: {{< featured-projects >}} 或 {{< featured-projects limit="6" >}}
+  图片使用 page bundle 中的 feature.png（Hugo image processing 自动缩放裁剪）
+*/}}
+{{ $projects := where (where site.RegularPages "Type" "projects") ".Params.featured" true }}
+{{ $projects = $projects.ByDate.Reverse }}
+{{ $limit := .Get "limit" | default 6 }}
+{{ with $projects }}
+  <div class="featured-projects not-prose">
+    {{ range first $limit . }}
+      {{ $page := . }}
+      <article class="fp-card">
+        {{ with .Resources.GetMatch "feature.*" }}
+          {{ $img := .Fill "600x400 Center" }}
+          <a href="{{ $page.RelPermalink }}" aria-label="{{ $page.Title }}">
+            <img
+              src="{{ $img.RelPermalink }}"
+              alt="{{ $page.Title }}"
+              width="600"
+              height="400"
+              loading="lazy"
+              decoding="async" />
+          </a>
+        {{ end }}
+        <div class="fp-card__body">
+          <h3 class="fp-card__title">
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          </h3>
+          {{ with .Params.description }}
+            <p class="fp-card__desc">{{ . }}</p>
+          {{ end }}
+          {{ with .Params.tags }}
+            <div class="fp-card__tags">
+              {{ range first 4 . }}
+                <span>{{ . }}</span>
+              {{ end }}
+            </div>
+          {{ end }}
+          <div class="fp-card__links">
+            {{ with .Params.github }}
+              <a href="{{ . }}" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+            {{ end }}
+            {{ with .Params.demo }}
+              <a href="{{ . }}" target="_blank" rel="noopener noreferrer">Demo ↗</a>
+            {{ end }}
+          </div>
+        </div>
+      </article>
+    {{ end }}
+  </div>
+{{ end }}

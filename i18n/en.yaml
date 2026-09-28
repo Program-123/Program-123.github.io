@@ -1,0 +1,4 @@
+# 覆盖主题文案（Hugo i18n 覆盖机制，不修改主题源码）
+# 首页底部"最新文章"区块标题改为 Recent Posts
+shortcode:
+  recent_articles: "Recent Posts"

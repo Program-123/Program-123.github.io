@@ -1,0 +1,9 @@
+{{/*
+  研究方向标签：读取 data/interests.toml
+  用法: {{< interests >}}
+*/}}
+<div class="interest-chips">
+  {{ range $item := hugo.Data.interests.items }}
+    <span>{{ $item.name }}</span>
+  {{ end }}
+</div>

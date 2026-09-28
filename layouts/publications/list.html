@@ -1,0 +1,39 @@
+{{/*
+  Publications 列表页覆盖模板（Hugo 布局覆盖机制，不修改主题）
+  按年份倒序分组，每条由 partials/publication-item.html 渲染。
+*/}}
+{{ define "main" }}
+  <header>
+    <h1 class="mt-5 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
+      {{ .Title | emojify }}
+    </h1>
+  </header>
+
+  <section class="mt-2 mb-10 prose flex max-w-full flex-col dark:prose-invert">
+    <div class="min-w-0 min-h-0 max-w-prose w-full">
+      {{ .Content }}
+    </div>
+  </section>
+
+  {{ $pubs := .Pages.ByDate.Reverse }}
+  {{ with $pubs }}
+    <div>
+      {{ range .GroupByDate "2006" }}
+        <section class="pub-year mb-10">
+          <h2 class="mt-12 mb-2 text-2xl font-bold text-neutral-700 first:mt-4 dark:text-neutral-300">
+            {{ .Key }}
+          </h2>
+          {{ range .Pages.ByDate.Reverse }}
+            {{ partial "publication-item.html" . }}
+          {{ end }}
+        </section>
+      {{ end }}
+    </div>
+  {{ else }}
+    <section class="mt-10 prose dark:prose-invert">
+      <p class="py-8 border-t">
+        <em>No publications yet.</em>
+      </p>
+    </section>
+  {{ end }}
+{{ end }}

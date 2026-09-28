@@ -1,0 +1,74 @@
+# GitHub Actions: 构建 Hugo 站点并部署到 GitHub Pages
+# 官方参考: https://gohugo.io/hosting-and-deployment/hosting-on-github/
+# 首次推送后，请在仓库 Settings → Pages 把 Source 设为 GitHub Actions。
+
+name: Deploy Hugo site to Pages
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+# GITHUB_TOKEN 的最小权限
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# 同一时间只允许一次部署，不取消进行中的运行
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+# 与 Hugo 官方文档保持一致的版本号（可按需更新）
+env:
+  HUGO_VERSION: 0.166.0
+  HUGO_ENV: production
+  TZ: Asia/Shanghai
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install Hugo CLI
+        run: |
+          wget -O "${{ runner.temp }}/hugo.tar.gz" \
+            "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.tar.gz" \
+            && tar -xf "${{ runner.temp }}/hugo.tar.gz" -C "${{ runner.temp }}" \
+            && sudo install "${{ runner.temp }}/hugo" /usr/local/bin/hugo
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive # 拉取 themes/blowfish（git submodule）
+          fetch-depth: 0 # lastmod 需要完整历史（可选）
+
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v5
+
+      - name: Build with Hugo
+        env:
+          HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
+        run: |
+          hugo \
+            --gc \
+            --minify \
+            --baseURL "${{ steps.pages.outputs.base_url }}/"
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./public
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

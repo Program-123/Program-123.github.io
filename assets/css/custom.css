@@ -1,0 +1,282 @@
+/* ==========================================================================
+   自定义样式 —— 通过 Blowfish 官方 custom.css 扩展点加载（不修改主题）
+   颜色使用主题配色方案的 CSS 变量（config: colorScheme = "blowfish"）
+   ========================================================================== */
+
+/* ---- Research Interests 标签 ---- */
+.interest-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0.75rem 0 1.5rem;
+}
+
+.interest-chips span {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.875rem;
+  border-radius: 9999px;
+  border: 1px solid rgb(var(--color-primary-500) / 0.45);
+  background: rgb(var(--color-primary-50) / 0.6);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: rgb(var(--color-primary-700));
+}
+
+.dark .interest-chips span {
+  border-color: rgb(var(--color-primary-300) / 0.4);
+  background: rgb(var(--color-primary-800) / 0.25);
+  color: rgb(var(--color-primary-300));
+}
+
+/* ---- Featured Projects 卡片 ---- */
+.featured-projects {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+  margin: 0.75rem 0 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .featured-projects {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .featured-projects {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.fp-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  border: 1px solid rgb(var(--color-neutral-300) / 0.8);
+  background: rgb(var(--color-neutral-50) / 0.6);
+  transition: border-color 0.15s ease;
+}
+
+.dark .fp-card {
+  border-color: rgb(var(--color-neutral-600) / 0.8);
+  background: rgb(var(--color-neutral-800) / 0.5);
+}
+
+.fp-card:hover {
+  border-color: rgb(var(--color-primary-500) / 0.7);
+}
+
+.fp-card img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  display: block;
+}
+
+.fp-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+  flex: 1;
+}
+
+.fp-card__title {
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.fp-card__title a {
+  color: rgb(var(--color-neutral-800));
+  text-decoration: none;
+}
+
+.dark .fp-card__title a {
+  color: rgb(var(--color-neutral-100));
+}
+
+.fp-card__title a:hover {
+  color: rgb(var(--color-primary-600));
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.fp-card__desc {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: rgb(var(--color-neutral-500));
+}
+
+.dark .fp-card__desc {
+  color: rgb(var(--color-neutral-400));
+}
+
+.fp-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem;
+  margin-top: auto;
+}
+
+.fp-card__tags span {
+  font-size: 0.75rem;
+  padding: 0.125rem 0.5rem;
+  border-radius: 0.25rem;
+  background: rgb(var(--color-neutral-200) / 0.7);
+  color: rgb(var(--color-neutral-600));
+}
+
+.dark .fp-card__tags span {
+  background: rgb(var(--color-neutral-700) / 0.6);
+  color: rgb(var(--color-neutral-300));
+}
+
+.fp-card__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.fp-card__links a {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: rgb(var(--color-primary-600));
+  text-decoration: none;
+}
+
+.fp-card__links a:hover {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* ---- Publications 列表 ---- */
+.pub-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgb(var(--color-neutral-300) / 0.7);
+}
+
+.dark .pub-item {
+  border-color: rgb(var(--color-neutral-700) / 0.7);
+}
+
+.pub-item__title {
+  margin: 0;
+  font-size: 1.0625rem;
+  font-weight: 650;
+  line-height: 1.45;
+}
+
+.pub-item__title a {
+  color: rgb(var(--color-neutral-800));
+  text-decoration: none;
+}
+
+.dark .pub-item__title a {
+  color: rgb(var(--color-neutral-100));
+}
+
+.pub-item__title a:hover {
+  color: rgb(var(--color-primary-600));
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.pub-item__authors {
+  margin: 0;
+  font-size: 0.9375rem;
+  color: rgb(var(--color-neutral-600));
+}
+
+.dark .pub-item__authors {
+  color: rgb(var(--color-neutral-400));
+}
+
+.pub-item__venue {
+  margin: 0;
+  font-size: 0.9375rem;
+  color: rgb(var(--color-neutral-500));
+}
+
+.dark .pub-item__venue {
+  color: rgb(var(--color-neutral-500));
+}
+
+.pub-item__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.375rem;
+}
+
+/* ---- 通用小按钮（PDF / DOI / Code / Project / View CV）---- */
+.btn-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.75rem;
+  border-radius: 0.375rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-decoration: none !important;
+  border: 1px solid rgb(var(--color-primary-500) / 0.6);
+  color: rgb(var(--color-primary-700));
+  background: transparent;
+}
+
+.btn-pill:hover {
+  background: rgb(var(--color-primary-500) / 0.12);
+}
+
+.dark .btn-pill {
+  border-color: rgb(var(--color-primary-400) / 0.5);
+  color: rgb(var(--color-primary-300));
+}
+
+.dark .btn-pill:hover {
+  background: rgb(var(--color-primary-500) / 0.2);
+}
+
+/* ---- Skills 分组 ---- */
+.skills-group {
+  margin-bottom: 1.25rem;
+}
+
+.skills-group h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+  font-weight: 650;
+  color: rgb(var(--color-neutral-800));
+}
+
+.dark .skills-group h3 {
+  color: rgb(var(--color-neutral-100));
+}
+
+.skills-group ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.skills-group li {
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  background: rgb(var(--color-neutral-200) / 0.6);
+  color: rgb(var(--color-neutral-700));
+}
+
+.dark .skills-group li {
+  background: rgb(var(--color-neutral-700) / 0.5);
+  color: rgb(var(--color-neutral-200));
+}

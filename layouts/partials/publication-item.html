@@ -1,0 +1,30 @@
+{{/*
+  单条论文条目（公共 partial）
+  被 shortcodes/recent-publications.html 和 layouts/publications/list.html 共用。
+  Front matter 字段设计为 BibTeX 友好（title/authors/venue/date/doi/pdf/code/project）。
+*/}}
+<div class="pub-item">
+  <h3 class="pub-item__title">
+    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+  </h3>
+  {{ with .Params.authors }}
+    <p class="pub-item__authors">{{ delimit . ", " }}</p>
+  {{ end }}
+  <p class="pub-item__venue">
+    {{ with .Params.venue }}<em>{{ . }}</em>, {{ end }}{{ .Date.Format "2006" }}
+  </p>
+  <div class="pub-item__links">
+    {{ with .Params.pdf }}
+      <a class="btn-pill" href="{{ . | relURL }}" target="_blank" rel="noopener noreferrer">PDF</a>
+    {{ end }}
+    {{ with .Params.doi }}
+      <a class="btn-pill" href="https://doi.org/{{ . }}" target="_blank" rel="noopener noreferrer">DOI</a>
+    {{ end }}
+    {{ with .Params.code }}
+      <a class="btn-pill" href="{{ . }}" target="_blank" rel="noopener noreferrer">Code</a>
+    {{ end }}
+    {{ with .Params.project }}
+      <a class="btn-pill" href="{{ . }}" target="_blank" rel="noopener noreferrer">Project</a>
+    {{ end }}
+  </div>
+</div>

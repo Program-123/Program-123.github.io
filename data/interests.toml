@@ -1,0 +1,16 @@
+# 研究方向标签 —— 首页 "Research Interests" 与 Research 页面共用。
+# ⚠️ 占位内容：直接增删条目即可。
+[[items]]
+  name = "Artificial Intelligence"
+
+[[items]]
+  name = "Machine Learning"
+
+[[items]]
+  name = "Data Science"
+
+[[items]]
+  name = "Computational Biology"
+
+[[items]]
+  name = "Software Engineering"

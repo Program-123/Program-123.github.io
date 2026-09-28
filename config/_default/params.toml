@@ -1,0 +1,59 @@
+# -- Theme Options --
+# 主题行为与外观参数。完整参数说明: https://blowfish.page/docs/configuration/
+
+colorScheme = "blowfish" # 蓝色系 Accent（可选: avocado, fire, ocean, slate, noir）
+defaultAppearance = "light" # 默认外观: light / dark
+autoSwitchAppearance = true # 自动跟随系统主题（同时保留手动切换按钮）
+
+# 极简原则：不启用搜索（避免额外 JS），保留代码复制按钮
+enableSearch = false
+enableCodeCopy = true
+
+disableImageOptimization = false
+
+[header]
+  layout = "basic" # 可选: basic, fixed, fixed-fill, fixed-gradient, fixed-fill-blur, floating
+
+[footer]
+  showMenu = true
+  showCopyright = true
+  showThemeAttribution = true
+  showAppearanceSwitcher = true # 手动 Light / Dark 切换按钮
+  showScrollToTop = true
+
+[homepage]
+  layout = "profile" # 官方 profile 布局 = Hero Section（头像 + 姓名 + 简介 + 社交链接）
+  showRecent = true # Hero 下方自动显示最新文章
+  showRecentItems = 3
+  showMoreLink = true
+  showMoreLinkDest = "/posts/"
+  cardView = false
+
+[article]
+  showDate = true
+  showDateOnlyInArticle = false
+  showDateUpdated = false
+  showAuthor = true
+  showHero = false
+  showBreadcrumbs = false
+  showDraftLabel = true
+  showEdit = false
+  showPagination = true # 上一篇 / 下一篇
+  showReadingTime = true
+  showTableOfContents = true
+  showTaxonomies = true # 文章页显示 tags / categories
+  showTags = true
+  showCategories = true
+  showWordCount = false
+  showZenMode = false
+
+[list]
+  showHero = false
+  showBreadcrumbs = false
+  showSummary = false
+  showTableOfContents = false
+  cardView = false # Projects 页面在自身 front matter 中单独开启 cardView
+  groupByYear = false
+
+[sitemap]
+  excludedKinds = ["taxonomy", "term"]

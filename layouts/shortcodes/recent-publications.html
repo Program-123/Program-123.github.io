@@ -1,0 +1,13 @@
+{{/*
+  首页最近论文：自动读取 content/publications/ 中最新 N 篇
+  用法: {{< recent-publications >}} 或 {{< recent-publications limit="3" >}}
+*/}}
+{{ $limit := .Get "limit" | default 3 }}
+{{ $pubs := where site.RegularPages "Type" "publications" }}
+{{ with $pubs }}
+  <div class="not-prose">
+    {{ range first $limit .ByDate.Reverse }}
+      {{ partial "publication-item.html" . }}
+    {{ end }}
+  </div>
+{{ end }}

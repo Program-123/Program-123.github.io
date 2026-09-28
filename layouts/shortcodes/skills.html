@@ -1,0 +1,16 @@
+{{/*
+  技能分组：读取 data/skills.toml，按类别展示
+  用法: {{< skills >}}
+*/}}
+<div class="not-prose">
+  {{ range $cat := hugo.Data.skills.categories }}
+    <div class="skills-group">
+      <h3>{{ $cat.name }}</h3>
+      <ul>
+        {{ range $cat.skills }}
+          <li>{{ . }}</li>
+        {{ end }}
+      </ul>
+    </div>
+  {{ end }}
+</div>

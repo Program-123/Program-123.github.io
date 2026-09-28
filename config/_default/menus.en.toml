@@ -1,0 +1,83 @@
+# -- Main Menu --
+# 顶部导航栏。文本菜单项用 pageRef 指向 content/ 下的 section；
+# 右侧社交图标是"纯图标菜单项"（pre = 主题图标名，无 name）。
+# ⚠️ 占位符：把各 url 中的 USERNAME / USER_ID / 邮箱替换为你的真实链接。
+
+[[main]]
+  name = "Home"
+  pageRef = "/"
+  weight = 10
+
+[[main]]
+  name = "About"
+  pageRef = "about"
+  weight = 20
+
+[[main]]
+  name = "Projects"
+  pageRef = "projects"
+  weight = 30
+
+[[main]]
+  name = "Research"
+  pageRef = "research"
+  weight = 40
+
+[[main]]
+  name = "Publications"
+  pageRef = "publications"
+  weight = 50
+
+[[main]]
+  name = "Blog"
+  pageRef = "posts"
+  weight = 60
+
+[[main]]
+  name = "CV"
+  pageRef = "cv"
+  weight = 70
+
+# ---- 右侧社交图标（勿删 identifier）----
+
+[[main]]
+  identifier = "github"
+  pre = "github"
+  url = "https://github.com/USERNAME"
+  weight = 80
+
+[[main]]
+  identifier = "email"
+  pre = "email"
+  url = "mailto:your-email@example.com"
+  weight = 81
+
+[[main]]
+  identifier = "google-scholar"
+  pre = "google-scholar"
+  url = "https://scholar.google.com/citations?user=USER_ID"
+  weight = 82
+
+[[main]]
+  identifier = "orcid"
+  pre = "orcid"
+  url = "https://orcid.org/0000-0000-0000-0000"
+  weight = 83
+
+[[main]]
+  identifier = "linkedin"
+  pre = "linkedin"
+  url = "https://www.linkedin.com/in/USERNAME"
+  weight = 84
+
+# -- Footer Menu (可选) --
+
+# [[footer]]
+#   name = "Tags"
+#   pageRef = "tags"
+#   weight = 10
+
+# [[footer]]
+#   name = "Categories"
+#   pageRef = "categories"
+#   weight = 20

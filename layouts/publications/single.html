@@ -1,0 +1,50 @@
+{{/*
+  Publication 详情页覆盖模板：显示论文元信息、摘要、外部链接按钮
+  以及可选的 front matter `bibtex` 字段（直接渲染为代码块，方便他人引用）。
+*/}}
+{{ define "main" }}
+  <header>
+    <h1 class="mt-5 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
+      {{ .Title }}
+    </h1>
+    <div class="mt-4 mb-2 text-base text-neutral-500 dark:text-neutral-400">
+      {{ with .Params.authors }}
+        <p class="my-1">{{ delimit . ", " }}</p>
+      {{ end }}
+      <p class="my-1">
+        {{ with .Params.venue }}<em>{{ . }}</em>, {{ end }}{{ .Date.Format "2006" }}
+      </p>
+    </div>
+    <div class="pub-item__links mt-2 mb-6">
+      {{ with .Params.pdf }}
+        <a class="btn-pill" href="{{ . | relURL }}" target="_blank" rel="noopener noreferrer">PDF</a>
+      {{ end }}
+      {{ with .Params.doi }}
+        <a class="btn-pill" href="https://doi.org/{{ . }}" target="_blank" rel="noopener noreferrer">DOI</a>
+      {{ end }}
+      {{ with .Params.code }}
+        <a class="btn-pill" href="{{ . }}" target="_blank" rel="noopener noreferrer">Code</a>
+      {{ end }}
+      {{ with .Params.project }}
+        <a class="btn-pill" href="{{ . }}" target="_blank" rel="noopener noreferrer">Project</a>
+      {{ end }}
+    </div>
+  </header>
+
+  <section class="prose flex max-w-full flex-col dark:prose-invert">
+    <div class="min-w-0 min-h-0 max-w-prose w-full">
+      {{ .Content }}
+    </div>
+  </section>
+
+  {{ with .Params.bibtex }}
+    <section class="prose dark:prose-invert mt-8">
+      <h2>BibTeX</h2>
+      {{ highlight . "bibtex" "" }}
+    </section>
+  {{ end }}
+
+  <div class="mt-10 print:hidden">
+    <a class="btn-pill" href="/publications/">← All Publications</a>
+  </div>
+{{ end }}
