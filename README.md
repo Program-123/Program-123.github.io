@@ -35,6 +35,24 @@ hugo server -D
 hugo --minify
 ```
 
+## 双语支持（中文 / English）
+
+站点为中英双语：**英文版在根路径 `/`，中文版在 `/zh-cn/`**。
+两套内容按"同文件名配对"互相链接（如 `hello-world.md` ↔ `hello-world.zh-cn.md`），
+有翻译的页面会自动在导航栏出现 🌐 语言切换下拉菜单。
+
+| 文件 | 说明 |
+| --- | --- |
+| `config/_default/languages.en.toml` / `languages.zh-cn.toml` | 各语言的站点标题、作者信息（占位符两份都要改） |
+| `config/_default/menus.en.toml` / `menus.zh-cn.toml` | 各语言的导航菜单 |
+| `i18n/en.yaml` / `i18n/zh-cn.yaml` | 自定义界面文案（论文按钮、"最新文章"等） |
+| `data/interests/{en,zh-cn}.toml`、`data/skills/{en,zh-cn}.toml` | 研究方向 / 技能数据 |
+| `content/**/xxx.md` ↔ `xxx.zh-cn.md` | 正文翻译对 |
+
+**添加双语文章**：先 `hugo new posts/my-post.md` 写英文版，再复制一份
+`my-post.zh-cn.md` 写中文版（front matter 的 date 保持一致），推送即可。
+只想发单语也没问题——没有翻译的页面不显示切换按钮。
+
 ## ⚠️ 启动后必改的个人信息
 
 所有个人信息集中在配置文件中，**不需要改任何 HTML 模板**：
@@ -47,8 +65,8 @@ hugo --minify
 | Hero 简介（headline / bio） | `config/_default/languages.en.toml` → `[params.author]` |
 | 社交链接（GitHub / Email / Scholar / ORCID / LinkedIn） | 同上文件的 `links` 列表 |
 | 导航栏右侧图标链接 | `config/_default/menus.en.toml` 底部"右侧社交图标"部分 |
-| 研究方向标签 | `data/interests.toml` |
-| 技能清单 | `data/skills.toml` |
+| 研究方向标签 | `data/interests/en.toml` 与 `data/interests/zh-cn.toml` |
+| 技能清单 | `data/skills/en.toml` 与 `data/skills/zh-cn.toml` |
 | 简介正文 | `content/about/index.md` |
 | CV 文件 | 替换 `static/cv/cv.pdf` |
 
