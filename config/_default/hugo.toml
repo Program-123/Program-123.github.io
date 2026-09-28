@@ -1,8 +1,8 @@
 # -- Site Configuration --
 # 参考文档: https://blowfish.page/docs/getting-started/
 
-# ⚠️ 部署前必改：把 USERNAME 替换为你的 GitHub 用户名
-baseURL = "https://USERNAME.github.io/"
+# GitHub Pages 用户站点地址（GitHub 用户名：Program-123）
+baseURL = "https://program-123.github.io/"
 theme = "blowfish"
 defaultContentLanguage = "en"
 

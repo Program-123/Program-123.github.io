@@ -26,7 +26,7 @@ title = "YOUR NAME" # ⚠️ 占位符：浏览器标签页 / 页头显示的站
   bio = "I am interested in artificial intelligence, machine learning, computational science, and software engineering." # 首页 Hero 中更完整的简介
   # 首页 Hero 中的社交链接（图标自动匹配）
   links = [
-    { github = "https://github.com/USERNAME" },
+    { github = "https://github.com/Program-123" },
     { google-scholar = "https://scholar.google.com/citations?user=USER_ID" },
     { email = "mailto:your-email@example.com" },
     { orcid = "https://orcid.org/0000-0000-0000-0000" },
