@@ -1,0 +1,35 @@
+# 学过的课程（中文）—— 与 en.toml 分组一一对应。
+# ⚠️ 占位内容：按分组增删修改；term 为修读学期，可留空。
+[[groups]]
+  name = "数学基础"
+  courses = [
+    { name = "微积分", term = "2020 秋" },
+    { name = "线性代数", term = "2021 春" },
+    { name = "概率论与数理统计", term = "2021 秋" },
+  ]
+
+[[groups]]
+  name = "计算机核心"
+  courses = [
+    { name = "数据结构", term = "2021 秋" },
+    { name = "算法设计与分析", term = "2022 春" },
+    { name = "操作系统", term = "2022 秋" },
+    { name = "计算机网络", term = "2023 春" },
+    { name = "数据库系统", term = "2023 春" },
+  ]
+
+[[groups]]
+  name = "人工智能"
+  courses = [
+    { name = "机器学习", term = "2023 秋" },
+    { name = "深度学习", term = "2024 春" },
+    { name = "计算机视觉", term = "2024 秋" },
+    { name = "自然语言处理", term = "2025 春" },
+  ]
+
+[[groups]]
+  name = "通识与工具"
+  courses = [
+    { name = "学术英语写作", term = "2022 春" },
+    { name = "哲学导论", term = "2023 秋" },
+  ]

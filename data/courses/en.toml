@@ -1,0 +1,35 @@
+# 学过的课程（英文）—— Courses 页面展示。
+# ⚠️ 占位内容：按分组增删修改；term 为修读学期，可留空。
+[[groups]]
+  name = "Mathematics"
+  courses = [
+    { name = "Calculus", term = "2020 Fall" },
+    { name = "Linear Algebra", term = "2021 Spring" },
+    { name = "Probability and Statistics", term = "2021 Fall" },
+  ]
+
+[[groups]]
+  name = "Computer Science Core"
+  courses = [
+    { name = "Data Structures", term = "2021 Fall" },
+    { name = "Algorithms", term = "2022 Spring" },
+    { name = "Operating Systems", term = "2022 Fall" },
+    { name = "Computer Networks", term = "2023 Spring" },
+    { name = "Database Systems", term = "2023 Spring" },
+  ]
+
+[[groups]]
+  name = "Artificial Intelligence"
+  courses = [
+    { name = "Machine Learning", term = "2023 Fall" },
+    { name = "Deep Learning", term = "2024 Spring" },
+    { name = "Computer Vision", term = "2024 Fall" },
+    { name = "Natural Language Processing", term = "2025 Spring" },
+  ]
+
+[[groups]]
+  name = "General"
+  courses = [
+    { name = "English Academic Writing", term = "2022 Spring" },
+    { name = "Introduction to Philosophy", term = "2023 Fall" },
+  ]

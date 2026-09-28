@@ -243,6 +243,62 @@
   background: rgb(var(--color-primary-500) / 0.2);
 }
 
+/* ---- Courses 课程分组 ---- */
+.courses-group {
+  margin-bottom: 1.25rem;
+}
+
+.courses-group h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+  font-weight: 650;
+  color: rgb(var(--color-neutral-800));
+}
+
+.dark .courses-group h3 {
+  color: rgb(var(--color-neutral-100));
+}
+
+.courses-group ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.courses-group li {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.375rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.375rem;
+  background: rgb(var(--color-neutral-200) / 0.6);
+}
+
+.dark .courses-group li {
+  background: rgb(var(--color-neutral-700) / 0.5);
+}
+
+.course-name {
+  font-size: 0.875rem;
+  color: rgb(var(--color-neutral-700));
+}
+
+.dark .course-name {
+  color: rgb(var(--color-neutral-200));
+}
+
+.course-term {
+  font-size: 0.75rem;
+  color: rgb(var(--color-neutral-500));
+}
+
+.dark .course-term {
+  color: rgb(var(--color-neutral-400));
+}
+
 /* ---- Skills 分组 ---- */
 .skills-group {
   margin-bottom: 1.25rem;

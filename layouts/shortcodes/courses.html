@@ -1,0 +1,20 @@
+{{/*
+  学过的课程：按当前语言读取 data/courses/{en,zh-cn}.toml，按分组展示
+  用法: {{< courses >}}
+*/}}
+{{ $data := index hugo.Data.courses (string site.Language.Lang) }}
+<div class="not-prose">
+  {{ range $data.groups }}
+    <div class="courses-group">
+      <h3>{{ .name }}</h3>
+      <ul>
+        {{ range .courses }}
+          <li>
+            <span class="course-name">{{ .name }}</span>
+            {{ with .term }}<span class="course-term">{{ . }}</span>{{ end }}
+          </li>
+        {{ end }}
+      </ul>
+    </div>
+  {{ end }}
+</div>

@@ -17,6 +17,11 @@
   weight = 30
 
 [[main]]
+  name = "课程"
+  pageRef = "courses"
+  weight = 35
+
+[[main]]
   name = "研究"
   pageRef = "research"
   weight = 40

@@ -67,6 +67,7 @@ hugo --minify
 | 导航栏右侧图标链接 | `config/_default/menus.en.toml` 底部"右侧社交图标"部分 |
 | 研究方向标签 | `data/interests/en.toml` 与 `data/interests/zh-cn.toml` |
 | 技能清单 | `data/skills/en.toml` 与 `data/skills/zh-cn.toml` |
+| 课程列表 | `data/courses/en.toml` 与 `data/courses/zh-cn.toml` |
 | 简介正文 | `content/about/index.md` |
 | CV 文件 | 替换 `static/cv/cv.pdf` |
 
@@ -91,13 +92,15 @@ hugo --minify
 │   ├── _index.md                 # 首页（Hero 下方各区块）
 │   ├── about/                    # About 页面
 │   ├── projects/                 # 项目（Page Bundle，卡片布局）
+│   ├── courses/                  # 学过的课程（数据驱动）
 │   ├── research/                 # Research 页面
 │   ├── publications/             # 论文（按年份自动分组）
 │   ├── posts/                    # 博客
 │   └── cv/                       # CV 入口页
 ├── data/
-│   ├── interests.toml            # 研究方向标签
-│   └── skills.toml               # 技能（按类别）
+│   ├── interests.toml            # 研究方向标签（双语子目录）
+│   ├── skills.toml               # 技能（按类别，双语子目录）
+│   └── courses.toml              # 学过的课程（按方向分组，双语子目录）
 ├── i18n/en.yaml                  # 主题文案覆盖（如 "Recent Posts"）
 ├── layouts/                      # 布局覆盖（不修改主题）
 │   ├── partials/publication-item.html
@@ -132,6 +135,12 @@ hugo new projects/my-project/index.md
 
 front matter 关键字段：`title` / `description` / `tags` / `github` / `demo` / `featured`（true 时上首页）。
 Projects 页面自动使用卡片布局。
+
+### 修改课程列表
+
+课程栏目（导航栏"课程 / Courses"）由数据文件驱动：编辑
+`data/courses/en.toml` 和 `data/courses/zh-cn.toml`，按分组增删课程即可，
+每门课包含 `name`（课程名）和可选的 `term`（修读学期），保存后自动更新。
 
 ### 添加论文
 
